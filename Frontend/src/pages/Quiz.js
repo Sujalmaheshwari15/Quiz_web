@@ -65,23 +65,25 @@ function Quiz() {
 
   return (
     <div className="container">
-      <h1>Quiz</h1>
-      <p className="quiz-timer">Time Left: {Math.floor(timeLeft / 60)}:{timeLeft % 60}</p>
-      <h2>{currentQuestion.question}</h2>
-      <div className="quiz-options">
-        {['A', 'B', 'C', 'D'].map((letter) => (
-          <label key={letter}>
-            <input
-              type="radio"
-              value={letter}
-              checked={selectedOption === letter}
-              onChange={handleOptionChange}
-            />
-            {currentQuestion[letter]}
-          </label>
-        ))}
+      <div className="quiz-card">
+        <h1>Quiz</h1>
+        <p className="quiz-timer">Time Left: {Math.floor(timeLeft / 60)}:{timeLeft % 60}</p>
+        <h2>{currentQuestion.question}</h2>
+        <div className="quiz-options">
+          {['A', 'B', 'C', 'D'].map((letter) => (
+            <label key={letter}>
+              <input
+                type="radio"
+                value={letter}
+                checked={selectedOption === letter}
+                onChange={handleOptionChange}
+              />
+              {currentQuestion[letter]}
+            </label>
+          ))}
+        </div>
+        <button onClick={handleSubmit}>Submit Answer</button>
       </div>
-      <button onClick={handleSubmit}>Submit Answer</button>
     </div>
   );
 }

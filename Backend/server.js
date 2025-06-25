@@ -39,6 +39,10 @@ app.post('/api/register', async (req, res) => {
     await user.save();
     res.json({ message: 'User registered successfully' });
   } catch (err) {
+    if (err.code === 11000) {
+      // Duplicate key error (email already exists)
+      return res.status(400).json({ error: 'Email already exists' });
+    }
     res.status(400).json({ error: 'Registration failed' });
   }
 });

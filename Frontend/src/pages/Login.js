@@ -34,32 +34,31 @@ function Login() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <input
-        type="email"
-        value={email}
-        placeholder="Enter your email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        value={password}
-        placeholder="Enter your password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleLogin}>Login</button>
-
-      
-      <p>
-        Don't have an account?{' '}
-        <span
-          onClick={goToSignup}
-          style={{ color: 'blue', cursor: 'pointer' }}
-        >
-          Sign up here
-        </span>
-      </p>
+    <div className="login-container">
+      <div className="login-card">
+        <h1>Login</h1>
+        <input
+          type="email"
+          value={email}
+          placeholder="Enter your email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          value={password}
+          placeholder="Enter your password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button onClick={handleLogin}>Login</button>
+        <p>
+          Don't have an account?{' '}
+          <span
+            onClick={goToSignup}
+          >
+            Sign up here
+          </span>
+        </p>
+      </div>
     </div>
   );
 }

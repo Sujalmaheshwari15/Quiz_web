@@ -10,7 +10,7 @@ function Result() {
   console.log('Answers:', answers);
 
   return (
-    <div>
+    <div className="result-card">
       <h1>Your Score: {score}</h1>
       <h2>Performance Breakdown</h2>
       <ul>

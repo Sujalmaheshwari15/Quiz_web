@@ -14,7 +14,11 @@ function Signup() {
       navigate('/login');  
     } catch (error) {
       console.error('Signup failed', error);
-      alert('Signup failed. Please try again.');
+      let message = 'Signup failed. Please try again.';
+      if (error.response && error.response.data && error.response.data.error) {
+        message = error.response.data.error;
+      }
+      alert(message);
     }
   };
 

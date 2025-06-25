@@ -31,7 +31,7 @@ function StartQuiz() {
   
 
   return (
-    <div>
+    <div className="welcome-card">
       <h1>Welcome to the Quiz</h1>
       <p>Rules:</p>
       <ul>
